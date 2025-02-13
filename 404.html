@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Halaman Tidak Ditemukan</title>
+  <link href="404_files/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #212529;
+      text-align: center;
+      padding: 10% 0;
+    }
+    .error-code {
+      font-size: 10rem;
+      font-weight: bold;
+      color: #dc3545;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .btn-back {
+      background-color: #198754;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn-back:hover {
+      background-color: #145f40;
+    }
+  </style>
+</head>
+<body cz-shortcut-listen="true">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="error-code">404</div>
+        <div class="error-message">Halaman yang Anda cari tidak ditemukan.</div>
+        <a href="https://karir.sentralmedika.co.id/" class="btn btn-back px-4 py-2">Kembali ke Halaman Utama</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="404_files/bootstrap.bundle.min.js"></script>
+
+
+<script>mendeleyWebImporter = {
+  downloadPdfs(e,t) { return this._call('downloadPdfs', [e,t]); },
+  open() { return this._call('open', []); },
+  setLoginToken(e) { return this._call('setLoginToken', [e]); },
+  _call(methodName, methodArgs) {
+    const id = Math.random();
+    window.postMessage({ id, token: '0.011436081147045973', methodName, methodArgs }, 'https://sentralmedika.co.id');
+    return new Promise(resolve => {
+      const listener = window.addEventListener('message', event => {
+        const data = event.data;
+        if (typeof data !== 'object' || !('result' in data) || data.id !== id) return;
+        window.removeEventListener('message', listener);
+        resolve(data.result);
+      });
+    });
+  }
+};</script></body></html>
