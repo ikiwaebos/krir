@@ -40,9 +40,11 @@
             font-size: 17px;
         }
         .topnav a img {
-            display: block;
-           
-        }
+    all: unset; /* Menghapus semua properti warisan */
+    display: block; /* Menghindari efek dari inline element */
+    width: auto; /* Sesuaikan ukuran sesuai kebutuhan */
+    height: auto; /* Sesuaikan ukuran sesuai kebutuhan */
+}
 
         .topnav a:hover {
             background-color: #ddd;
