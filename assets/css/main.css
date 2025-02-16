@@ -1097,7 +1097,7 @@
 			}
 
 			.item header h1, .item header h2, .item header h3, .item header h4, .item header h5, .item header h6 {
-				color: #ffffff;
+				color: #000000;
 			}
 
 			.item header blockquote {
