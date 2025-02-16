@@ -172,7 +172,6 @@
                     let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
                     let badge = diffDays > 14 ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
-
                     let jobElement = `
                         <article class="item">
                             <header>
@@ -180,8 +179,9 @@
                                     <img src="${job.gambar}" alt="${job.judul}" width="800" height="400">
                                 </a>
                                 <h3>${job.judul}</h3>
-                                ${badge}
+                             
                             </header>
+                            <p>${badge}</p>
                             <p>${job.deskripsi}</p>
                             <ul class="actions">
                                 <li><a href="${job.link}" class="button">More</a></li>
