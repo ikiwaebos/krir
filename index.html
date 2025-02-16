@@ -160,6 +160,12 @@
             }
         }
 
+        function formatTanggal(tanggal) {
+    let date = new Date(tanggal);
+    let options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('id-ID', options);
+}
+
         async function loadLowongan() {
             try {
                 let response = await fetch('data.json');
@@ -183,7 +189,7 @@
                                 <h3>${job.judul}</h3>
                              
                             </header> 
-                            <p style="font-size: 13px; margin-top: -5">${job.tanggal}</p>
+                            <p style="font-size: 13px; margin-top: -5">${formatTanggal(job.tanggal)}</p>
                             <p>${badge}</p>
                             <p>${job.deskripsi}</p>
                             <ul class="actions">
