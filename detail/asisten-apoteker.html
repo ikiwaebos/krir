@@ -163,12 +163,23 @@
             }
         }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     fetch('https://karir.sentralmedika.co.id/data.json')
         .then(response => response.json())
         .then(data => {
             let job = data.find(item => item.judul === "Asisten Apoteker");
             if (job) {
+                // Ambil tanggal dari data JSON
+                let jobDate = new Date(job.tanggal); // Konversi ke format Date
+                let today = new Date(); // Tanggal saat ini
+                
+                // Hitung selisih waktu dalam milidetik
+                let timeDiff = today - jobDate;
+                let dayDiff = timeDiff / (1000 * 60 * 60 * 24); // Konversi ke hari
+
+                // Menampilkan informasi lowongan kerja
                 document.getElementById('intro').innerHTML = `
                     <img src="${job.gambar}" alt="${job.judul}" style="max-width: 100%; height: auto;">
                     <h2>${job.judul}</h2>
@@ -179,12 +190,22 @@
                     <p><strong>Tanggal:</strong> ${job.tanggal}</p>
                     <p><strong>Email:</strong> <a href="mailto:${job.email}">${job.email}</a></p>
                     <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/${job.whatsapp.replace(/\D/g, '')}" target="_blank">${job.whatsapp}</a></p>
-                   
                 `;
+
+                // Cek apakah lowongan sudah lebih dari 14 hari
+                if (dayDiff > 14) {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Lowongan Ditutup',
+                        text: 'Maaf Lowongan ini sudah ditutup',
+                        confirmButtonText: 'OK'
+                    });
+                }
             }
         })
         .catch(error => console.error('Error loading data:', error));
 </script>
+
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
