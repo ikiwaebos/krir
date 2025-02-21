@@ -5,7 +5,21 @@
         "tanggal": "2025-02-07",
         "link": "https://karir.sentralmedika.co.id/detail/dokter-estetika",
         "gambar": "https://karir.sentralmedika.co.id/images/1.jpeg",
-        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png"
+        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png",
+        "requirements": [
+        "Pria/Wanita",
+        "Berusia 35 Tahun",
+        "Pendidikan Min. D3 Farmasi",
+        "Memiliki STR Aktif",
+        "Berpengalaman kerja Min. 1 di apotek",
+        "Berpenampilan rapi dan menarik",
+        "Ramah dan edukatif",
+        "Memiliki skill komunikasi yang baik",
+        "Jujur dan Bertanggung jawab"
+        ],
+         "email": "costera.clinic@gmail.com",
+          "whatsapp": "+62 813 8888 4313"
+         
     },
     {
         "judul": "Penanggung Jawab Apoteker",
@@ -13,7 +27,21 @@
         "tanggal": "2025-02-07",
         "link": "https://karir.sentralmedika.co.id/detail/penanggung-jawab-apoteker",
         "gambar": "https://karir.sentralmedika.co.id/images/2.jpeg",
-        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png"
+        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png",
+        "requirements": [
+        "Pria/Wanita",
+        "Berusia 35 Tahun",
+        "Pendidikan Min. D3 Farmasi",
+        "Memiliki STR Aktif",
+        "Berpengalaman kerja Min. 1 di apotek",
+        "Berpenampilan rapi dan menarik",
+        "Ramah dan edukatif",
+        "Memiliki skill komunikasi yang baik",
+        "Jujur dan Bertanggung jawab"
+        ],
+         "email": "costera.clinic@gmail.com",
+          "whatsapp": "+62 813 8888 4313"
+         
     },
     {
         "judul": "Asisten Apoteker",
@@ -21,6 +49,19 @@
         "tanggal": "2025-02-07",
         "link": "https://karir.sentralmedika.co.id/detail/asisten-apoteker",
         "gambar": "https://karir.sentralmedika.co.id/images/3.jpeg",
-        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png"
-    }
+        "gambardepan": "https://karir.sentralmedika.co.id/images/bgpost.png",
+        "requirements": [
+        "Pria/Wanita",
+        "Berusia 35 Tahun",
+        "Pendidikan Min. D3 Farmasi",
+        "Memiliki STR Aktif",
+        "Berpengalaman kerja Min. 1 di apotek",
+        "Berpenampilan rapi dan menarik",
+        "Ramah dan edukatif",
+        "Memiliki skill komunikasi yang baik",
+        "Jujur dan Bertanggung jawab"
+        ],
+         "email": "costera.clinic@gmail.com",
+          "whatsapp": "+62 813 8888 4313"
+         }
 ]

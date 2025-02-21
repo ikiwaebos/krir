@@ -127,28 +127,7 @@
 
     <div id="wrapper">
 
-        <section id="intro" class="main" style="text-align: center;">
-            <img src="images/3.jpeg" alt="Dokter Estetika" style="max-width: 100%; height: auto;">
-            <h2>Asisten Apoteker</h2>
-            <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
-                <li>Pria/Wanita</li>
-                <li>Berusia 35 Tahun</li>
-                <li>Pendidikan Min. D3 Farmasi</li>
-                <li>Memiliki STR Aktif</li>
-                <li>Berpengalaman kerja Min. 1 di apotek</li>
-                <li>Berpenampilan rapi dan menarik</li>
-                <li>Ramah dan edukatif</li>
-                <li>Memiliki skill komunikasi yang baik</li>
-                <li>Jujur dan Bertanggung jawab</li>
-            </ul>
-            <div style="margin-top: 20px; text-align: center;">
-                <p>Jika tertarik melamar posisi kerja di atas, silakan kirim CV & Lamaran ke Email atau WA perusahaan
-                    menggunakan subjek posisi yang dilamar dan nama pelamar.</p>
-                <p><strong>Email:</strong> <a href="mailto:costera.clinic@gmail.com">costera.clinic@gmail.com</a></p>
-                <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/6281388884313" target="_blank">+62
-                        813 8888 4313</a></p>
-            </div>
-        </section>
+        <section id="intro" class="main" style="text-align: center;"></section>
 
 
 
@@ -184,7 +163,28 @@
             }
         }
     </script>
-
+<script>
+    fetch('data.json')
+        .then(response => response.json())
+        .then(data => {
+            let job = data.find(item => item.judul === "Asisten Apoteker");
+            if (job) {
+                document.getElementById('intro').innerHTML = `
+                    <img src="${job.gambar}" alt="${job.judul}" style="max-width: 100%; height: auto;">
+                    <h2>${job.judul}</h2>
+                    <p>${job.deskripsi}</p>
+                    <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                    <p><strong>Tanggal:</strong> ${job.tanggal}</p>
+                    <p><strong>Email:</strong> <a href="mailto:${job.email}">${job.email}</a></p>
+                    <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/${job.whatsapp.replace(/\D/g, '')}" target="_blank">${job.whatsapp}</a></p>
+                    <a href="${job.link}" target="_blank">Lihat Detail</a>
+                `;
+            }
+        })
+        .catch(error => console.error('Error loading data:', error));
+</script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/skel.min.js"></script>
