@@ -162,49 +162,59 @@
 
         function formatTanggal(tanggal) {
     let date = new Date(tanggal);
+    if (isNaN(date)) return "Tanggal tidak valid";
+    
     let options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('id-ID', options);
 }
 
-        async function loadLowongan() {
-            try {
-                let response = await fetch('data.json');
-                let lowongan = await response.json();
-                let container = document.getElementById('karir');
-                container.innerHTML = "";
+async function loadLowongan() {
+    try {
+        let response = await fetch('data.json');
+        let lowongan = await response.json();
+        let container = document.getElementById('karir');
+        container.innerHTML = "";
 
-                lowongan.forEach(job => {
-                    let jobDate = new Date(job.tanggal);
-                    let today = new Date();
-                    let diffTime = Math.abs(today - jobDate);
-                    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        let today = new Date();
+        today.setHours(0, 0, 0, 0); // Pastikan hanya tanggal yang dihitung, tanpa jam
 
-                    let badge = diffDays > 14 ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
-                    let jobElement = `
-                        <article class="item">
-                            <header>
-                                <a href="${job.link}">
-                                   <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
-                                </a>
-                                <h3>${job.judul}</h3>
-                             
-                            </header> 
-                            <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
-                            <p>${badge}</p>
-                            <p>${job.deskripsi}</p>
-                            <ul class="actions">
-                                <li><a href="${job.link}" class="button">More</a></li>
-                            </ul>
-                        </article>
-                    `;
-                    container.innerHTML += jobElement;
-                });
-            } catch (error) {
-                console.error("Gagal mengambil data JSON:", error);
-            }
-        }
+        lowongan.forEach(job => {
+            let jobDate = new Date(job.tanggal);
+            if (isNaN(jobDate)) return; // Lewati jika tanggal tidak valid
 
-        window.onload = loadLowongan;
+            jobDate.setHours(23, 59, 59, 999); // Pastikan batas akhir hari dihitung
+
+            let diffTime = today - jobDate;
+            let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Pembulatan ke bawah
+
+            let isClosed = diffDays > 14;
+            let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
+
+            let jobElement = `
+                <article class="item">
+                    <header>
+                        <a href="${job.link}">
+                            <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
+                        </a>
+                        <h3>${job.judul}</h3>
+                    </header> 
+                    <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
+                    <p>${badge}</p>
+                    <p>${job.deskripsi}</p>
+                    <ul class="actions">
+                        <li><a href="${job.link}" class="button">More</a></li>
+                    </ul>
+                </article>
+            `;
+            container.innerHTML += jobElement;
+        });
+    } catch (error) {
+        console.error("Gagal mengambil data JSON:", error);
+    }
+}
+
+window.onload = loadLowongan;
+
     </script>
 
 </body>
