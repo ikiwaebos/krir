@@ -171,7 +171,15 @@
             let options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
             return new Date(tanggal).toLocaleDateString('id-ID', options);
         }
-        fetch('https://karir.sentralmedika.co.id/data.json')
+        fetch(`https://karir.sentralmedika.co.id/data.json?timestamp=${new Date().getTime()}`, {
+    method: 'GET',
+    headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+    },
+    cache: 'no-store' // Pastikan browser tidak mengambil cache
+})
             .then(response => response.json())
             .then(data => {
                 let job = data.find(item => item.judul === "Operator Produksi");
