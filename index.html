@@ -170,7 +170,15 @@
 
 async function loadLowongan() {
     try {
-        let response = await fetch('data.json');
+        let response = await fetch(`https://karir.sentralmedika.co.id/data.json?timestamp=${new Date().getTime()}`, {
+        method: 'GET',
+        headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        },
+        cache: 'no-store' 
+    });
         let lowongan = await response.json();
         let container = document.getElementById('karir');
         container.innerHTML = "";
