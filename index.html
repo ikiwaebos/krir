@@ -186,7 +186,7 @@ let today = new Date(); // Tanggal saat ini
 // Hitung selisih waktu dalam milidetik
 let timeDiff = batasLamaran - today;
 let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            let isClosed = diffDays < 0;
+            let isClosed = dayDiff < 0;
             let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
 
             let jobElement = `
