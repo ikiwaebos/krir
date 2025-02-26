@@ -1,0 +1,219 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>Karir Asisten Apoteker - PT. Sentral Medika Indonesia</title>
+    <link rel="shortcut icon" href="images/logopolos.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="author" content="Sentral Medika Indonesia">
+    <meta property="twitter:type" content="website" />
+    <meta property="og:url" content="Karir Sentral Medika Indonesia" />
+    <meta property="twitter:url" content="Karir Sentral Medika Indonesia" />
+    <meta property="og:title" content="Karir Sentral Medika Indonesia" />
+    <meta property="twitter:title" content="Karir Sentral Medika Indonesia" />
+    <meta property="og:description" content="situs resmi Karir Sentral Medika Indonesia" />
+    <meta property="twitter:description" content="situs resmi Karir Sentral Medika Indonesia" />
+    <meta property="og:image" content="images/logopolos.jpg" />
+    <meta property="twitter:image" content="images/logopolos.jpg" />
+    <meta name="description"
+        content="PT. Sentral Medika Indonesia - Produsen alat kesehatan berstandar nasional yang bangga mendukung kesehatan Indonesia.">
+    <!-- Favicon Icon -->
+    <link rel="icon" href="images/logopolos.jpg">
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .topnav img {
+            height: 50px;
+            margin-left: 10px;
+        }
+
+        .topnav .menu {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .topnav a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #6d6de7;
+            color: black;
+        }
+     
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .menu a {
+                display: none;
+            }
+
+            .topnav .menu a.icon {
+                display: block;
+            }
+
+            .topnav.responsive .menu {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            .topnav.responsive .menu a {
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            display: inline-block;
+        }
+
+        .badge.closed {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="topnav" id="myTopnav">
+        <img src="images/logonyaa.png" alt="Logo Sentral Medika">
+        <div class="menu">
+            <a href="https://karir.sentralmedika.co.id/">Home</a>
+            <a href="https://www.sentralmedika.co.id/">Halaman Utama</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </nav>
+    <header id="header" class="alt">
+        <div class="inner">
+            <h1>Karir - PT. Sentral Medika Indonesia</h1>
+            <p>Selamat datang di halaman karir PT. Sentral Medika Indonesia! Kami selalu mencari individu berbakat untuk
+                berkembang bersama kami.</p>
+        </div>
+    </header>
+
+
+    </header>
+
+    <div id="wrapper">
+
+        <section id="intro" class="main" style="text-align: center;"></section>
+
+
+
+
+        <section id="cta" class="main special">
+            <h2>Rekrutmen Tanpa Biaya</h2>
+            <p>PT. Sentral Medika Indonesia tidak memungut biaya apa pun dalam proses rekrutmen. Hati-hati terhadap
+                penipuan yang mengatasnamakan perusahaan kami. Jika Anda menerima permintaan pembayaran dalam bentuk apa
+                pun, harap laporkan kepada kami.</p>
+
+        </section>
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <div class="copyright">
+        Powered by: &copy PT. Sentral Medika Indonesia
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    fetch('https://karir.sentralmedika.co.id/data.json')
+        .then(response => response.json())
+        .then(data => {
+            let job = data.find(item => item.judul === "Asisten Apoteker");
+            if (job) {
+                // Ambil tanggal dari data JSON
+                let jobDate = new Date(job.tanggal); // Konversi ke format Date
+                let today = new Date(); // Tanggal saat ini
+                
+                // Hitung selisih waktu dalam milidetik
+                let timeDiff = today - jobDate;
+                let dayDiff = timeDiff / (1000 * 60 * 60 * 24); // Konversi ke hari
+
+                // Menampilkan informasi lowongan kerja
+                document.getElementById('intro').innerHTML = `
+                    <img src="${job.gambar}" alt="${job.judul}" style="max-width: 100%; height: auto;">
+                    <h2>${job.judul}</h2>
+                    <p>${job.deskripsi}</p>
+                    <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                    
+                    <p><strong>${job.note}</strong> </p>
+                    <p><strong>Tanggal:</strong> ${job.tanggal}</p>
+                    <p><strong>Email:</strong> <a href="mailto:${job.email}">${job.email}</a></p>
+                    <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/${job.whatsapp.replace(/\D/g, '')}" target="_blank">${job.whatsapp}</a></p>
+                 <p><strong>Alamat:</strong> ${job.lokasi}</p>
+                
+                    `;
+
+                // Cek apakah lowongan sudah lebih dari 14 hari
+                if (dayDiff > 14) {
+                    Swal.fire({
+                        icon: 'info',
+                        title: 'Lowongan Ditutup',
+                        text: 'Maaf Lowongan ini sudah ditutup'
+                    });
+                }
+            }
+        })
+        .catch(error => console.error('Error loading data:', error));
+</script>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
