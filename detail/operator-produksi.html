@@ -186,19 +186,19 @@
 
               
 document.getElementById('intro').innerHTML = `
+
     <img src="${job.gambar}" alt="${job.judul}" style="max-width: 100%; height: auto;">
-    <h2>${job.judul}</h2>
+    <h3>${job.judul}</h3>
     <p>${job.deskripsi}</p>
-   <h2>Syarat Pekerjaan: </h2>
+   <h3>Syarat Pekerjaan: </h3>
     ${job.requirements && job.requirements.length > 0 ? `
         <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
             ${job.requirements.map(req => `<li>${req}</li>`).join('')}
-        </ul>
+        
     ` : ''}
         <hr>
-        <h2>Syarat Lamaran:</h2>
+        <h3>Syarat Lamaran:</h3>
      ${job.berkas && job.berkas.length > 0 ? `
-        <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
             ${job.berkas.map(kas => `<li>${kas}</li>`).join('')}
         </ul>
     ` : ''}
