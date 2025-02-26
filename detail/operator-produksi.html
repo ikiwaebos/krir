@@ -176,14 +176,14 @@
             .then(data => {
                 let job = data.find(item => item.judul === "Operator Produksi");
                 if (job) {
-                    // Ambil tanggal dari data JSON
-                    let jobDate = new Date(job.tanggal); // Konversi ke format Date
-                    let today = new Date(); // Tanggal saat ini
+                // Ambil tanggal dari data JSON
+let jobDate = new Date(job.tanggal); // Konversi ke format Date
+let batasLamaran = new Date(job.batasLamaran); // Tanggal batas lamaran dari data JSON
+let today = new Date(); // Tanggal saat ini
 
-                    // Hitung selisih waktu dalam milidetik
-                    let timeDiff = today - jobDate;
-                    let dayDiff = timeDiff / (1000 * 60 * 60 * 24); // Konversi ke hari
-
+// Hitung selisih waktu dalam milidetik
+let timeDiff = batasLamaran - today;
+let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
               
 document.getElementById('intro').innerHTML = `
 
@@ -213,7 +213,7 @@ document.getElementById('intro').innerHTML = `
 
 
                     // Cek apakah lowongan sudah lebih dari 14 hari
-                    if (dayDiff > 14) {
+                    if (dayDiff < 0) {
                         Swal.fire({
                             icon: 'info',
                             title: 'Lowongan Ditutup',

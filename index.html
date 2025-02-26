@@ -179,15 +179,14 @@ async function loadLowongan() {
         today.setHours(0, 0, 0, 0); // Pastikan hanya tanggal yang dihitung, tanpa jam
 
         lowongan.forEach(job => {
-            let jobDate = new Date(job.tanggal);
-            if (isNaN(jobDate)) return; // Lewati jika tanggal tidak valid
+            let jobDate = new Date(job.tanggal); // Konversi ke format Date
+let batasLamaran = new Date(job.batasLamaran); // Tanggal batas lamaran dari data JSON
+let today = new Date(); // Tanggal saat ini
 
-            jobDate.setHours(23, 59, 59, 999); // Pastikan batas akhir hari dihitung
-
-            let diffTime = today - jobDate;
-            let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // Pembulatan ke bawah
-
-            let isClosed = diffDays > 14;
+// Hitung selisih waktu dalam milidetik
+let timeDiff = batasLamaran - today;
+let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            let isClosed = diffDays < 0;
             let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
 
             let jobElement = `
