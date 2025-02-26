@@ -194,7 +194,7 @@ let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
                 `;
 
                 // Cek apakah lowongan sudah lebih dari 14 hari
-                if (dayDiff > 14) {
+                if (dayDiff < 0 ) {
                     Swal.fire({
                         icon: 'info',
                         title: 'Lowongan Ditutup',
