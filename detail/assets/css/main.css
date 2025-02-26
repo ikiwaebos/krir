@@ -88,7 +88,7 @@
 
 	body {
 		background-color: #f4f4f4;
-		color: #383737;
+		color: #000000;
 	}
 
 	body, input, select, textarea {
@@ -273,7 +273,7 @@
 	}
 
 		a:hover {
-			color: #ffffff !important;
+			color: #ff0080 !important;
 		}
 
 	strong, b {
