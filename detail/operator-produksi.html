@@ -193,14 +193,14 @@ document.getElementById('intro').innerHTML = `
     ${job.requirements && job.requirements.length > 0 ? `
         <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
             
-   <h3>Syarat Pekerjaan: </h3>
+   <h4>Syarat Pekerjaan: </h4>
             ${job.requirements.map(req => `<li>${req}</li>`).join('')}
         
     ` : ''}
        
      ${job.berkas && job.berkas.length > 0 ? `
       <hr>
-        <h3>Syarat Lamaran:</h3>
+        <h4>Syarat Lamaran:</h4>
             ${job.berkas.map(kas => `<li>${kas}</li>`).join('')}
         </ul>
     ` : ''}
