@@ -169,7 +169,7 @@
     fetch('https://karir.sentralmedika.co.id/data.json')
         .then(response => response.json())
         .then(data => {
-            let job = data.find(item => item.judul === "Asisten Apoteker");
+            let job = data.find(item => item.judul === "Operator Produksi");
             if (job) {
                 // Ambil tanggal dari data JSON
                 let jobDate = new Date(job.tanggal); // Konversi ke format Date
