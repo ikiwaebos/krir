@@ -58,105 +58,95 @@
 
 
 
- function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
+(function(){
+    function _0x1e1e() {
+        var _0x1788 = document.getElementById("myTopnav");
+        if (_0x1788.className === "topnav") {
+            _0x1788.className += " responsive";
+        } else {
+            _0x1788.className = "topnav";
+        }
+    }
+    function _0x2e5b(_0x2644) {
+        var _0x1565 = new Date(_0x2644);
+        if (isNaN(_0x1565)) return "Tanggal tidak valid";
+        var _0x5ef1 = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+        return _0x1565.toLocaleDateString('id-ID', _0x5ef1);
+    }
+    var _0x1f6d = [];
+    var _0x1f90 = 1;
+    var _0x47c7 = 4;
+    async function _0x26d1() {
+        try {
+            // Correct URL obfuscation: Proper character codes for the URL "https://karir.sentralmedika.co.id/data.json"
+            var _0x06a2 = String.fromCharCode(104, 116, 116, 112, 115, 58, 47, 47, 107, 97, 114, 105, 114, 46, 115, 101, 110, 116, 114, 97, 108, 109, 101, 100, 105, 107, 97, 46, 99, 111, 46, 105, 100, 47, 100, 97, 116, 97, 46, 106, 115, 111, 110); // Correct character codes for "https://karir.sentralmedika.co.id/data.json"
+            var _0x10ab = await fetch(`${_0x06a2}?timestamp=${new Date().getTime()}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                },
+                cache: 'no-store'
+            });
+            _0x1f6d = await _0x10ab.json();
+            _0x3910();
+        } catch (_0x5e9a) {
+            console.error("Gagal mengambil data JSON:", _0x5e9a);
+        }
+    }
+    function _0x3910() {
+        var _0x1ab0 = document.getElementById('karir');
+        var _0x45e6 = document.getElementById('pagination');
+        _0x1ab0.innerHTML = "";
+        _0x45e6.innerHTML = "";
+        var _0x2f63 = (_0x1f90 - 1) * _0x47c7;
+        var _0x5973 = _0x2f63 + _0x47c7;
+        var _0x52c5 = _0x1f6d.slice(_0x2f63, _0x5973);
+        var _0x5ad9 = new Date();
+        _0x5ad9.setHours(0, 0, 0, 0);
+        _0x52c5.forEach(function (_0x53e2) {
+            var _0x5867 = new Date(_0x53e2.batasLamaran);
+            var _0x3df2 = _0x5867 - _0x5ad9;
+            var _0x44e2 = Math.ceil(_0x3df2 / (1000 * 60 * 60 * 24));
+            var _0x35c7 = _0x44e2 < 0;
+            var _0x3c64 = _0x35c7 ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
+            var _0x45db = `
+                <article class="item">
+                    <header>
+                        <a href="${_0x53e2.link}">
+                            <img src="${_0x53e2.gambardepan}" alt="${_0x53e2.judul}" style="width: 100%; height: auto; display: block;">
+                        </a>
+                        <h3>${_0x53e2.judul}</h3>
+                    </header> 
+                    <p style="font-size: 13px; margin-top: -5px;">${_0x2e5b(_0x53e2.tanggal)}</p>
+                    <p>${_0x3c64}</p>
+                    <p>${_0x53e2.deskripsi}</p>
+                    <ul class="actions">
+                        <li><a href="${_0x53e2.link}" class="button">More</a></li>
+                    </ul>
+                </article>
+            `;
+            _0x1ab0.innerHTML += _0x45db;
+        });
+        _0x3b7e();
+    }
+    function _0x3b7e() {
+        var _0x487b = document.getElementById('pagination');
+        var _0x3074 = Math.ceil(_0x1f6d.length / _0x47c7);
+        for (var _0x27b1 = 1; _0x27b1 <= _0x3074; _0x27b1++) {
+            var _0x568f = document.createElement('button');
+            _0x568f.innerText = _0x27b1;
+            _0x568f.classList.add('pagination-button');
+            if (_0x27b1 === _0x1f90) {
+                _0x568f.classList.add('active');
             }
+            _0x568f.addEventListener('click', function () {
+                _0x1f90 = _0x27b1;
+                _0x3910();
+            });
+            _0x487b.appendChild(_0x568f);
         }
-
-        function formatTanggal(tanggal) {
-    let date = new Date(tanggal);
-    if (isNaN(date)) return "Tanggal tidak valid";
-    
-    let options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString('id-ID', options);
-}
-
-let lowongan = [];
-let currentPage = 1;
-const itemsPerPage = 4;
-
-async function loadLowongan() {
-    try {
-        let response = await fetch(`https://karir.sentralmedika.co.id/data.json?timestamp=${new Date().getTime()}`, {
-            method: 'GET',
-            headers: {
-                'Cache-Control': 'no-cache, no-store, must-revalidate',
-                'Pragma': 'no-cache',
-                'Expires': '0'
-            },
-            cache: 'no-store'
-        });
-
-        lowongan = await response.json();
-        renderLowongan();
-    } catch (error) {
-        console.error("Gagal mengambil data JSON:", error);
     }
-}
-
-function renderLowongan() {
-    let container = document.getElementById('karir');
-    let paginationContainer = document.getElementById('pagination');
-    container.innerHTML = "";
-    paginationContainer.innerHTML = "";
-
-    let start = (currentPage - 1) * itemsPerPage;
-    let end = start + itemsPerPage;
-    let paginatedItems = lowongan.slice(start, end);
-
-    let today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    paginatedItems.forEach(job => {
-        let batasLamaran = new Date(job.batasLamaran);
-        let timeDiff = batasLamaran - today;
-        let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-        let isClosed = dayDiff < 0;
-        let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
-
-        let jobElement = `
-            <article class="item">
-                <header>
-                    <a href="${job.link}">
-                        <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
-                    </a>
-                    <h3>${job.judul}</h3>
-                </header> 
-                <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
-                <p>${badge}</p>
-                <p>${job.deskripsi}</p>
-                <ul class="actions">
-                    <li><a href="${job.link}" class="button">More</a></li>
-                </ul>
-            </article>
-        `;
-        container.innerHTML += jobElement;
-    });
-
-    renderPagination();
-}
-
-function renderPagination() {
-    let paginationContainer = document.getElementById('pagination');
-    let totalPages = Math.ceil(lowongan.length / itemsPerPage);
-
-    for (let i = 1; i <= totalPages; i++) {
-        let pageButton = document.createElement('button');
-        pageButton.innerText = i;
-        pageButton.classList.add('pagination-button');
-        if (i === currentPage) {
-            pageButton.classList.add('active');
-        }
-        pageButton.addEventListener('click', () => {
-            currentPage = i;
-            renderLowongan();
-        });
-        paginationContainer.appendChild(pageButton);
-    }
-}
-
-window.onload = loadLowongan;
+    window.onload = _0x26d1;
+})();
