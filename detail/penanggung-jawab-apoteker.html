@@ -164,23 +164,27 @@
     </script>
 <!-- Tambahkan SweetAlert Library -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    var judulnya = "Penanggung Jawab Apoteker"
+</script>
 
 <script>
     fetch('https://karir.sentralmedika.co.id/data.json')
         .then(response => response.json())
         .then(data => {
-            let job = data.find(item => item.judul === "Penanggung Jawab Apoteker");
+            let job = data.find(item => item.judul === judulnya);
             if (job) {
-                // Ambil tanggal dari data JSON
-let jobDate = new Date(job.tanggal); // Konversi ke format Date
-let batasLamaran = new Date(job.batasLamaran); // Tanggal batas lamaran dari data JSON
-let today = new Date(); // Tanggal saat ini
+             
+                let jobDate = new Date(job.tanggal); 
+let batasLamaran = new Date(job.batasLamaran); 
+let today = new Date();
 
-// Hitung selisih waktu dalam milidetik
+
 let timeDiff = batasLamaran - today;
 let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
-                // Menampilkan informasi lowongan kerja
+             
                 document.getElementById('intro').innerHTML = `
                     <img src="${job.gambar}" alt="${job.judul}" style="width: 100%; max-width: 500px; height: auto;">
                     <h2>${job.judul}</h2>
@@ -193,8 +197,8 @@ let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
                     <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/${job.whatsapp.replace(/\D/g, '')}" target="_blank">${job.whatsapp}</a></p>
                 `;
 
-                // Cek apakah lowongan sudah lebih dari 14 hari
-                if (dayDiff > 14) {
+                
+                if (dayDiff < 0) {
                     Swal.fire({
                         icon: 'info',
                         title: 'Lowongan Ditutup',
