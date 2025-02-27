@@ -151,7 +151,77 @@
     </div>
 
     <script>
-      (function(_0x48911b,_0x1f5da7){const _0x3c39dc=_0x30d3,_0x5b2214=_0x48911b();while(!![]){try{const _0x5bd844=-parseInt(_0x3c39dc(0x182))/0x1*(-parseInt(_0x3c39dc(0x168))/0x2)+parseInt(_0x3c39dc(0x183))/0x3+parseInt(_0x3c39dc(0x180))/0x4*(parseInt(_0x3c39dc(0x186))/0x5)+-parseInt(_0x3c39dc(0x17c))/0x6+-parseInt(_0x3c39dc(0x170))/0x7+parseInt(_0x3c39dc(0x17d))/0x8*(-parseInt(_0x3c39dc(0x164))/0x9)+parseInt(_0x3c39dc(0x160))/0xa*(parseInt(_0x3c39dc(0x166))/0xb);if(_0x5bd844===_0x1f5da7)break;else _0x5b2214['push'](_0x5b2214['shift']());}catch(_0x2e66da){_0x5b2214['push'](_0x5b2214['shift']());}}}(_0x8823,0xdd15e));function _0x30d3(_0x55ceff,_0x529ab7){const _0x8823da=_0x8823();return _0x30d3=function(_0x30d372,_0x6146ff){_0x30d372=_0x30d372-0x15d;let _0x46ee8d=_0x8823da[_0x30d372];return _0x46ee8d;},_0x30d3(_0x55ceff,_0x529ab7);}function myFunction(){const _0x4453a7=_0x30d3;var _0x446d30=document[_0x4453a7(0x165)](_0x4453a7(0x163));_0x446d30['className']===_0x4453a7(0x173)?_0x446d30['className']+=_0x4453a7(0x175):_0x446d30['className']=_0x4453a7(0x173);}function formatTanggal(_0x2f24a5){const _0xa164b7=_0x30d3;let _0x250803=new Date(_0x2f24a5);if(isNaN(_0x250803))return _0xa164b7(0x172);let _0x132a09={'weekday':_0xa164b7(0x161),'day':_0xa164b7(0x15d),'month':'long','year':'numeric'};return _0x250803[_0xa164b7(0x185)](_0xa164b7(0x184),_0x132a09);}async function loadLowongan(){const _0x5423fe=_0x30d3;try{let _0x4ac104=await fetch(_0x5423fe(0x17b)+new Date()[_0x5423fe(0x177)](),{'method':'GET','headers':{'Cache-Control':_0x5423fe(0x187),'Pragma':_0x5423fe(0x16a),'Expires':'0'},'cache':_0x5423fe(0x16d)}),_0x3cf61c=await _0x4ac104[_0x5423fe(0x15f)](),_0x47a667=document[_0x5423fe(0x165)](_0x5423fe(0x179));_0x47a667[_0x5423fe(0x17a)]='';let _0x4bde16=new Date();_0x4bde16['setHours'](0x0,0x0,0x0,0x0),_0x3cf61c[_0x5423fe(0x15e)](_0x4f9585=>{const _0x4bbf31=_0x5423fe;let _0x135fb6=new Date(_0x4f9585[_0x4bbf31(0x16b)]),_0xe51958=new Date(_0x4f9585['batasLamaran']),_0x4d39eb=new Date(),_0x1c249a=_0xe51958-_0x4d39eb,_0x5bcbdc=Math[_0x4bbf31(0x17f)](_0x1c249a/(0x3e8*0x3c*0x3c*0x18)),_0x5f3ac7=_0x5bcbdc<0x0,_0x78b0c=_0x5f3ac7?_0x4bbf31(0x169):'',_0x2cf90f=_0x4bbf31(0x167)+_0x4f9585['link']+_0x4bbf31(0x176)+_0x4f9585['gambardepan']+_0x4bbf31(0x189)+_0x4f9585[_0x4bbf31(0x16c)]+_0x4bbf31(0x188)+_0x4f9585['judul']+_0x4bbf31(0x174)+formatTanggal(_0x4f9585['tanggal'])+_0x4bbf31(0x178)+_0x78b0c+_0x4bbf31(0x178)+_0x4f9585[_0x4bbf31(0x16f)]+_0x4bbf31(0x171)+_0x4f9585[_0x4bbf31(0x17e)]+_0x4bbf31(0x16e);_0x47a667[_0x4bbf31(0x17a)]+=_0x2cf90f;});}catch(_0x23b999){console[_0x5423fe(0x181)](_0x5423fe(0x162),_0x23b999);}}function _0x8823(){const _0x1b5d10=['</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','karir','innerHTML','https://karir.sentralmedika.co.id/data.json?timestamp=','5796720oCFDQL','8psQRIq','link','ceil','4rWhBwb','error','1TfGuaR','5004132yNdCrs','id-ID','toLocaleDateString','1268605opTLmC','no-cache,\x20no-store,\x20must-revalidate','\x22\x20style=\x22width:\x20100%;\x20height:\x20auto;\x20display:\x20block;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>','\x22\x20alt=\x22','2-digit','forEach','json','10upFqgJ','long','Gagal\x20mengambil\x20data\x20JSON:','myTopnav','9916155xTmnTs','getElementById','14036286bomYJh','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<article\x20class=\x22item\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<header>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22','1495380eexqzE','<span\x20class=\x22badge\x20closed\x22>Lowongan\x20Sudah\x20Ditutup</span>','no-cache','tanggal','judul','no-store','\x22\x20class=\x22button\x22>More</a></li>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</article>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','deskripsi','6804000CKPSxQ','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20class=\x22actions\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<li><a\x20href=\x22','Tanggal\x20tidak\x20valid','topnav','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</header>\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:\x2013px;\x20margin-top:\x20-5px;\x22>','\x20responsive','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','getTime'];_0x8823=function(){return _0x1b5d10;};return _0x8823();}window['onload']=loadLowongan;
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        function formatTanggal(tanggal) {
+    let date = new Date(tanggal);
+    if (isNaN(date)) return "Tanggal tidak valid";
+    
+    let options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+    return date.toLocaleDateString('id-ID', options);
+}
+
+async function loadLowongan() {
+    try {
+        let response = await fetch(`https://karir.sentralmedika.co.id/data.json?timestamp=${new Date().getTime()}`, {
+        method: 'GET',
+        headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+        },
+        cache: 'no-store' 
+    });
+        let lowongan = await response.json();
+        let container = document.getElementById('karir');
+        container.innerHTML = "";
+
+        let today = new Date();
+        today.setHours(0, 0, 0, 0); // Pastikan hanya tanggal yang dihitung, tanpa jam
+
+        lowongan.forEach(job => {
+            let jobDate = new Date(job.tanggal); // Konversi ke format Date
+let batasLamaran = new Date(job.batasLamaran); // Tanggal batas lamaran dari data JSON
+let today = new Date(); // Tanggal saat ini
+
+// Hitung selisih waktu dalam milidetik
+let timeDiff = batasLamaran - today;
+let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+            let isClosed = dayDiff < 0;
+            let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
+
+            let jobElement = `
+                <article class="item">
+                    <header>
+                        <a href="${job.link}">
+                            <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
+                        </a>
+                        <h3>${job.judul}</h3>
+                    </header> 
+                    <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
+                    <p>${badge}</p>
+                    <p>${job.deskripsi}</p>
+                    <ul class="actions">
+                        <li><a href="${job.link}" class="button">More</a></li>
+                    </ul>
+                </article>
+            `;
+            container.innerHTML += jobElement;
+        });
+    } catch (error) {
+        console.error("Gagal mengambil data JSON:", error);
+    }
+}
+
+window.onload = loadLowongan;
+
     </script>
 
 </body>
