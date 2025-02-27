@@ -193,7 +193,7 @@ let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
               
 document.getElementById('intro').innerHTML = `
 
-    <img src="${job.gambar}" alt="${job.judul}" style="max-width: 100%; height: auto;">
+    <img src="${job.gambar}" alt="${job.judul}" style="width: 100%; max-width: 700; height: auto;">
     <h3>${job.judul}</h3>
     <p>${job.deskripsi}</p>
     ${job.requirements && job.requirements.length > 0 ? `
