@@ -150,98 +150,100 @@
         Powered by: &copy; PT. Sentral Medika Indonesia
     </div>
 
-  <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            }
+ <script>
+(function(){
+    function _0x1e1e() {
+        var _0x1788 = document.getElementById("myTopnav");
+        if (_0x1788.className === "topnav") {
+            _0x1788.className += " responsive";
+        } else {
+            _0x1788.className = "topnav";
         }
-
-        function formatTanggal(tanggal) {
-    let date = new Date(tanggal);
-    if (isNaN(date)) return "Tanggal tidak valid";
-    
-    let options = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString('id-ID', options);
-}
-
-let lowongan = [];
-let currentPage = 1;
-const itemsPerPage = 4;
-async function loadLowongan() {
-function _0x336f(){const _0x5ee257=['88994ZsIjRr','no-cache,\x20no-store,\x20must-revalidate','no-cache','10625160mRTdxr','8214185GALAKP','GET','3455884npbrwx','9364158gIOUdZ','1307067CXlCUQ','4571NpJnrs','15112NYvDVh','13sbEukq','Gagal\x20mengambil\x20data\x20JSON:','error'];_0x336f=function(){return _0x5ee257;};return _0x336f();}const _0x2fa2b6=_0x556c;function _0x556c(_0xb4dc72,_0x23fbac){const _0x336fa0=_0x336f();return _0x556c=function(_0x556c4c,_0x1f99f0){_0x556c4c=_0x556c4c-0x9e;let _0x258831=_0x336fa0[_0x556c4c];return _0x258831;},_0x556c(_0xb4dc72,_0x23fbac);}(function(_0xb24677,_0xcefb10){const _0x128b41=_0x556c,_0xdfb1dc=_0xb24677();while(!![]){try{const _0x5c066c=parseInt(_0x128b41(0xa1))/0x1*(-parseInt(_0x128b41(0xa4))/0x2)+-parseInt(_0x128b41(0x9e))/0x3+parseInt(_0x128b41(0xaa))/0x4+parseInt(_0x128b41(0xa8))/0x5+parseInt(_0x128b41(0xa7))/0x6+parseInt(_0x128b41(0x9f))/0x7*(-parseInt(_0x128b41(0xa0))/0x8)+-parseInt(_0x128b41(0xab))/0x9;if(_0x5c066c===_0xcefb10)break;else _0xdfb1dc['push'](_0xdfb1dc['shift']());}catch(_0x2490b0){_0xdfb1dc['push'](_0xdfb1dc['shift']());}}}(_0x336f,0xf1963));try{let response=await fetch('https://karir.sentralmedika.co.id/data.json?timestamp='+new Date()['getTime'](),{'method':_0x2fa2b6(0xa9),'headers':{'Cache-Control':_0x2fa2b6(0xa5),'Pragma':_0x2fa2b6(0xa6),'Expires':'0'},'cache':'no-store'});lowongan=await response['json'](),renderLowongan();}catch(_0x11e70d){console[_0x2fa2b6(0xa3)](_0x2fa2b6(0xa2),_0x11e70d);}
-
-      }
-
-    
-    function renderLowongan() {
-    let container = document.getElementById('karir');
-    let paginationContainer = document.getElementById('pagination');
-    container.innerHTML = "";
-    paginationContainer.innerHTML = "";
-
-    let start = (currentPage - 1) * itemsPerPage;
-    let end = start + itemsPerPage;
-    let paginatedItems = lowongan.slice(start, end);
-
-    let today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    paginatedItems.forEach(job => {
-        let batasLamaran = new Date(job.batasLamaran);
-        let timeDiff = batasLamaran - today;
-        let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-        let isClosed = dayDiff < 0;
-        let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
-
-        let jobElement = `
-            <article class="item">
-                <header>
-                    <a href="${job.link}">
-                        <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
-                    </a>
-                    <h3>${job.judul}</h3>
-                </header> 
-                <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
-                <p>${badge}</p>
-                <p>${job.deskripsi}</p>
-                <ul class="actions">
-                    <li><a href="${job.link}" class="button">More</a></li>
-                </ul>
-            </article>
-        `;
-        container.innerHTML += jobElement;
-    });
-
-    renderPagination();
-}
-
-function renderPagination() {
-    let paginationContainer = document.getElementById('pagination');
-    let totalPages = Math.ceil(lowongan.length / itemsPerPage);
-
-    for (let i = 1; i <= totalPages; i++) {
-        let pageButton = document.createElement('button');
-        pageButton.innerText = i;
-        pageButton.classList.add('pagination-button');
-        if (i === currentPage) {
-            pageButton.classList.add('active');
-        }
-        pageButton.addEventListener('click', () => {
-            currentPage = i;
-            renderLowongan();
-        });
-        paginationContainer.appendChild(pageButton);
     }
-}
+    function _0x2e5b(_0x2644) {
+        var _0x1565 = new Date(_0x2644);
+        if (isNaN(_0x1565)) return "Tanggal tidak valid";
+        var _0x5ef1 = { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' };
+        return _0x1565.toLocaleDateString('id-ID', _0x5ef1);
+    }
+    var _0x1f6d = [];
+    var _0x1f90 = 1;
+    var _0x47c7 = 4;
+    async function _0x26d1() {
+        try {
+            var _0x06a2 = String.fromCharCode(104, 116, 116, 112, 115, 58, 47, 47, 107, 97, 114, 105, 46, 115, 101, 110, 116, 114, 97, 108, 109, 101, 100, 105, 107, 97, 46, 99, 111, 46, 105, 100, 47, 100, 97, 116, 97, 46, 106, 115, 111, 110); // Converts to the URL string
+            var _0x10ab = await fetch(`${_0x06a2}?timestamp=${new Date().getTime()}`, {
+                method: 'GET',
+                headers: {
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache',
+                    'Expires': '0'
+                },
+                cache: 'no-store'
+            });
+            _0x1f6d = await _0x10ab.json();
+            _0x3910();
+        } catch (_0x5e9a) {
+            console.error("Gagal mengambil data JSON:", _0x5e9a);
+        }
+    }
+    function _0x3910() {
+        var _0x1ab0 = document.getElementById('karir');
+        var _0x45e6 = document.getElementById('pagination');
+        _0x1ab0.innerHTML = "";
+        _0x45e6.innerHTML = "";
+        var _0x2f63 = (_0x1f90 - 1) * _0x47c7;
+        var _0x5973 = _0x2f63 + _0x47c7;
+        var _0x52c5 = _0x1f6d.slice(_0x2f63, _0x5973);
+        var _0x5ad9 = new Date();
+        _0x5ad9.setHours(0, 0, 0, 0);
+        _0x52c5.forEach(function (_0x53e2) {
+            var _0x5867 = new Date(_0x53e2.batasLamaran);
+            var _0x3df2 = _0x5867 - _0x5ad9;
+            var _0x44e2 = Math.ceil(_0x3df2 / (1000 * 60 * 60 * 24));
+            var _0x35c7 = _0x44e2 < 0;
+            var _0x3c64 = _0x35c7 ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
+            var _0x45db = `
+                <article class="item">
+                    <header>
+                        <a href="${_0x53e2.link}">
+                            <img src="${_0x53e2.gambardepan}" alt="${_0x53e2.judul}" style="width: 100%; height: auto; display: block;">
+                        </a>
+                        <h3>${_0x53e2.judul}</h3>
+                    </header> 
+                    <p style="font-size: 13px; margin-top: -5px;">${_0x2e5b(_0x53e2.tanggal)}</p>
+                    <p>${_0x3c64}</p>
+                    <p>${_0x53e2.deskripsi}</p>
+                    <ul class="actions">
+                        <li><a href="${_0x53e2.link}" class="button">More</a></li>
+                    </ul>
+                </article>
+            `;
+            _0x1ab0.innerHTML += _0x45db;
+        });
+        _0x3b7e();
+    }
+    function _0x3b7e() {
+        var _0x487b = document.getElementById('pagination');
+        var _0x3074 = Math.ceil(_0x1f6d.length / _0x47c7);
+        for (var _0x27b1 = 1; _0x27b1 <= _0x3074; _0x27b1++) {
+            var _0x568f = document.createElement('button');
+            _0x568f.innerText = _0x27b1;
+            _0x568f.classList.add('pagination-button');
+            if (_0x27b1 === _0x1f90) {
+                _0x568f.classList.add('active');
+            }
+            _0x568f.addEventListener('click', function () {
+                _0x1f90 = _0x27b1;
+                _0x3910();
+            });
+            _0x487b.appendChild(_0x568f);
+        }
+    }
+    window.onload = _0x26d1;
+})();
+</script>
 
-window.onload = loadLowongan;
-
-
-    </script>
  
 </body>
 </html>
