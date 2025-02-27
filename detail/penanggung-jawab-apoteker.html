@@ -170,44 +170,7 @@
 </script>
 
 <script>
-    fetch('https://karir.sentralmedika.co.id/data.json')
-        .then(response => response.json())
-        .then(data => {
-            let job = data.find(item => item.judul === judulnya);
-            if (job) {
-             
-                let jobDate = new Date(job.tanggal); 
-let batasLamaran = new Date(job.batasLamaran); 
-let today = new Date();
-
-
-let timeDiff = batasLamaran - today;
-let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-             
-                document.getElementById('intro').innerHTML = `
-                    <img src="${job.gambar}" alt="${job.judul}" style="width: 100%; max-width: 500px; height: auto;">
-                    <h2>${job.judul}</h2>
-                    <p>${job.deskripsi}</p>
-                    <ul style="display: inline-block; text-align: left; padding: 0; list-style-position: inside;">
-                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
-                    </ul>
-                    <p><strong>Tanggal:</strong> ${job.tanggal}</p>
-                    <p><strong>Email:</strong> <a href="mailto:${job.email}">${job.email}</a></p>
-                    <p><strong>No. Telepon / WhatsApp:</strong> <a href="https://wa.me/${job.whatsapp.replace(/\D/g, '')}" target="_blank">${job.whatsapp}</a></p>
-                `;
-
-                
-                if (dayDiff < 0) {
-                    Swal.fire({
-                        icon: 'info',
-                        title: 'Lowongan Ditutup',
-                        text: 'Maaf Lowongan ini sudah ditutup'
-                    });
-                }
-            }
-        })
-        .catch(error => console.error('Error loading data:', error));
+   function _0x1098(_0x43eb80,_0x1232cb){const _0x3d18fc=_0x3d18();return _0x1098=function(_0x109860,_0x4386a8){_0x109860=_0x109860-0x1b4;let _0x4ad604=_0x3d18fc[_0x109860];return _0x4ad604;},_0x1098(_0x43eb80,_0x1232cb);}function _0x3d18(){const _0x198da5=['Error\x20loading\x20data:','29LljfnI','185088SfqWRS','12irXlFe','deskripsi','batasLamaran','</a></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</ul>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>Tanggal:</strong>\x20','142816kRxHqO','https://karir.sentralmedika.co.id/data.json','</a></p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>No.\x20Telepon\x20/\x20WhatsApp:</strong>\x20<a\x20href=\x22https://wa.me/','12FKUwzP','\x22\x20target=\x22_blank\x22>','ceil','json','gambar','info','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<ul\x20style=\x22display:\x20inline-block;\x20text-align:\x20left;\x20padding:\x200;\x20list-style-position:\x20inside;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','error','Maaf\x20Lowongan\x20ini\x20sudah\x20ditutup','find','fire','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>Email:</strong>\x20<a\x20href=\x22mailto:','8519313ZVWsQL','88080MgKxUS','judul','intro','email','</li>','17604xRuDyt','tanggal','</h2>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','innerHTML','map','48717YCBhjr','\x22\x20style=\x22width:\x20100%;\x20max-width:\x20500px;\x20height:\x20auto;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>','Lowongan\x20Ditutup','whatsapp','getElementById','then','28RucGFl','catch','1744810FvUdZY','9yZCGpQ','replace','requirements'];_0x3d18=function(){return _0x198da5;};return _0x3d18();}const _0x5d6a92=_0x1098;(function(_0x3d267e,_0xccef2e){const _0x499b6f=_0x1098,_0xc4c391=_0x3d267e();while(!![]){try{const _0x4bc07d=parseInt(_0x499b6f(0x1c2))/0x1*(-parseInt(_0x499b6f(0x1de))/0x2)+-parseInt(_0x499b6f(0x1b5))/0x3*(parseInt(_0x499b6f(0x1c4))/0x4)+-parseInt(_0x499b6f(0x1d9))/0x5+-parseInt(_0x499b6f(0x1c3))/0x6+-parseInt(_0x499b6f(0x1bb))/0x7*(parseInt(_0x499b6f(0x1c9))/0x8)+parseInt(_0x499b6f(0x1be))/0x9*(-parseInt(_0x499b6f(0x1bd))/0xa)+parseInt(_0x499b6f(0x1d8))/0xb*(parseInt(_0x499b6f(0x1cc))/0xc);if(_0x4bc07d===_0xccef2e)break;else _0xc4c391['push'](_0xc4c391['shift']());}catch(_0x5b4fc5){_0xc4c391['push'](_0xc4c391['shift']());}}}(_0x3d18,0x2b01b),fetch(_0x5d6a92(0x1ca))[_0x5d6a92(0x1ba)](_0x10fb29=>_0x10fb29[_0x5d6a92(0x1cf)]())[_0x5d6a92(0x1ba)](_0x60a147=>{const _0x383447=_0x5d6a92;let _0x8db00=_0x60a147[_0x383447(0x1d5)](_0x36274b=>_0x36274b[_0x383447(0x1da)]===judulnya);if(_0x8db00){let _0x43b990=new Date(_0x8db00[_0x383447(0x1df)]),_0x18f8d6=new Date(_0x8db00[_0x383447(0x1c6)]),_0x28334f=new Date(),_0xa422a2=_0x18f8d6-_0x28334f,_0x86a0e5=Math[_0x383447(0x1ce)](_0xa422a2/(0x3e8*0x3c*0x3c*0x18));document[_0x383447(0x1b9)](_0x383447(0x1db))[_0x383447(0x1e1)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x8db00[_0x383447(0x1d0)]+'\x22\x20alt=\x22'+_0x8db00['judul']+_0x383447(0x1b6)+_0x8db00[_0x383447(0x1da)]+_0x383447(0x1e0)+_0x8db00[_0x383447(0x1c5)]+_0x383447(0x1d2)+_0x8db00[_0x383447(0x1c0)][_0x383447(0x1b4)](_0x182a75=>'<li>'+_0x182a75+_0x383447(0x1dd))['join']('')+_0x383447(0x1c8)+_0x8db00[_0x383447(0x1df)]+_0x383447(0x1d7)+_0x8db00[_0x383447(0x1dc)]+'\x22>'+_0x8db00[_0x383447(0x1dc)]+_0x383447(0x1cb)+_0x8db00[_0x383447(0x1b8)][_0x383447(0x1bf)](/\D/g,'')+_0x383447(0x1cd)+_0x8db00[_0x383447(0x1b8)]+_0x383447(0x1c7),_0x86a0e5<0x0&&Swal[_0x383447(0x1d6)]({'icon':_0x383447(0x1d1),'title':_0x383447(0x1b7),'text':_0x383447(0x1d4)});}})[_0x5d6a92(0x1bc)](_0x36ce9c=>console[_0x5d6a92(0x1d3)](_0x5d6a92(0x1c1),_0x36ce9c)));
 </script>
 
 
