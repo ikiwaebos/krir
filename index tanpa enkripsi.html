@@ -125,7 +125,7 @@
 
     <div id="wrapper">
         <section id="karir" class="main items">
-            <!-- Lowongan akan di-load di sini -->
+            <div id="pagination" style="text-align: center; margin-top: 20px;"></div>
         </section>
 
         <section id="cta" class="main special">
@@ -168,59 +168,92 @@
     return date.toLocaleDateString('id-ID', options);
 }
 
+let lowongan = [];
+let currentPage = 1;
+const itemsPerPage = 5;
+
 async function loadLowongan() {
     try {
         let response = await fetch(`https://karir.sentralmedika.co.id/data.json?timestamp=${new Date().getTime()}`, {
-        method: 'GET',
-        headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache',
-            'Expires': '0'
-        },
-        cache: 'no-store' 
-    });
-        let lowongan = await response.json();
-        let container = document.getElementById('karir');
-        container.innerHTML = "";
-
-        let today = new Date();
-        today.setHours(0, 0, 0, 0); // Pastikan hanya tanggal yang dihitung, tanpa jam
-
-        lowongan.forEach(job => {
-            let jobDate = new Date(job.tanggal); // Konversi ke format Date
-let batasLamaran = new Date(job.batasLamaran); // Tanggal batas lamaran dari data JSON
-let today = new Date(); // Tanggal saat ini
-
-// Hitung selisih waktu dalam milidetik
-let timeDiff = batasLamaran - today;
-let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-            let isClosed = dayDiff < 0;
-            let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
-
-            let jobElement = `
-                <article class="item">
-                    <header>
-                        <a href="${job.link}">
-                            <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
-                        </a>
-                        <h3>${job.judul}</h3>
-                    </header> 
-                    <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
-                    <p>${badge}</p>
-                    <p>${job.deskripsi}</p>
-                    <ul class="actions">
-                        <li><a href="${job.link}" class="button">More</a></li>
-                    </ul>
-                </article>
-            `;
-            container.innerHTML += jobElement;
+            method: 'GET',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache',
+                'Expires': '0'
+            },
+            cache: 'no-store'
         });
+
+        lowongan = await response.json();
+        renderLowongan();
     } catch (error) {
         console.error("Gagal mengambil data JSON:", error);
     }
 }
 
+function renderLowongan() {
+    let container = document.getElementById('karir');
+    let paginationContainer = document.getElementById('pagination');
+    container.innerHTML = "";
+    paginationContainer.innerHTML = "";
+
+    let start = (currentPage - 1) * itemsPerPage;
+    let end = start + itemsPerPage;
+    let paginatedItems = lowongan.slice(start, end);
+
+    let today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    paginatedItems.forEach(job => {
+        let batasLamaran = new Date(job.batasLamaran);
+        let timeDiff = batasLamaran - today;
+        let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        let isClosed = dayDiff < 0;
+        let badge = isClosed ? `<span class="badge closed">Lowongan Sudah Ditutup</span>` : "";
+
+        let jobElement = `
+            <article class="item">
+                <header>
+                    <a href="${job.link}">
+                        <img src="${job.gambardepan}" alt="${job.judul}" style="width: 100%; height: auto; display: block;">
+                    </a>
+                    <h3>${job.judul}</h3>
+                </header> 
+                <p style="font-size: 13px; margin-top: -5px;">${formatTanggal(job.tanggal)}</p>
+                <p>${badge}</p>
+                <p>${job.deskripsi}</p>
+                <ul class="actions">
+                    <li><a href="${job.link}" class="button">More</a></li>
+                </ul>
+            </article>
+        `;
+        container.innerHTML += jobElement;
+    });
+
+    renderPagination();
+}
+
+function renderPagination() {
+    let paginationContainer = document.getElementById('pagination');
+    let totalPages = Math.ceil(lowongan.length / itemsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        let pageButton = document.createElement('button');
+        pageButton.innerText = i;
+        pageButton.classList.add('pagination-button');
+        if (i === currentPage) {
+            pageButton.classList.add('active');
+        }
+        pageButton.addEventListener('click', () => {
+            currentPage = i;
+            renderLowongan();
+        });
+        paginationContainer.appendChild(pageButton);
+    }
+}
+
 window.onload = loadLowongan;
+
 
     </script>
 
